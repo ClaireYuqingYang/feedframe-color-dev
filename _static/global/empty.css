@@ -1,0 +1,141 @@
+/* =========================================================
+   FeedFrame mode UI styles
+   ========================================================= */
+
+/* ===== Toggle buttons ===== */
+.ff-toggle-btn.active {
+    background: black;
+    color: white;
+}
+
+/* ===== Banner ===== */
+.ff-banner {
+    font-size: 14px;
+    padding: 6px;
+    border-radius: 6px;
+    background: #f1f1f1;
+}
+
+/* =========================================================
+   Tweet card base style
+   说明：
+   这部分是不随 mode 变化的“卡片通用样式”
+   我把圆角和 padding 单独提出来，避免在 informed/entertained 里重复写
+   ========================================================= */
+/* =========================================================
+   Base tweet card style
+   ========================================================= */
+#tweet_table td div.row {
+    border-radius: 12px;
+    padding: 8px;
+    transition: background-color 0.35s ease;
+}
+
+/* =========================================================
+   Normal mode colors
+   ========================================================= */
+
+/* informed: normal light blue */
+body.ff-informed #tweet_table td div.row {
+    background-color: #eaf4ff;
+}
+
+/* entertained: normal light orange */
+body.ff-entertained #tweet_table td div.row {
+    background-color: #fff2e8;
+}
+
+/* =========================================================
+   Banner normal colors
+   ========================================================= */
+body.ff-informed .ff-banner {
+    background-color: #dfefff;
+}
+
+body.ff-entertained .ff-banner {
+    background-color: #ffe8d6;
+}
+
+/* =========================================================
+   Pulse animations
+   说明：
+   5秒内：
+   0%   = 正常浅色
+   50%  = 最深色
+   100% = 回到正常浅色
+   ========================================================= */
+
+/* informed pulse: light blue -> deeper blue -> light blue */
+@keyframes informedPulse {
+    0% {
+        background-color: #eaf4ff;
+    }
+    50% {
+        background-color: #9fc8ff;
+    }
+    100% {
+        background-color: #eaf4ff;
+    }
+}
+
+/* entertained pulse: light orange -> deeper orange -> light orange */
+@keyframes entertainedPulse {
+    0% {
+        background-color: #fff2e8;
+    }
+    50% {
+        background-color: #ffc78f;
+    }
+    100% {
+        background-color: #fff2e8;
+    }
+}
+
+/* =========================================================
+   Apply pulse during reminder window
+   说明：
+   JS 会在 pulse 的 5 秒内给 body 加 ff-pulsing
+   然后根据当前 mode 触发不同动画
+   ========================================================= */
+
+/* informed pulsing */
+body.ff-informed.ff-pulsing #tweet_table td div.row {
+    animation: informedPulse 5s ease-in-out forwards;
+}
+
+body.ff-entertained.ff-pulsing #tweet_table td div.row {
+    animation: entertainedPulse 5s ease-in-out forwards;
+}
+
+/* 可选：banner 也一起 pulse，但比卡片轻一点 */
+@keyframes informedBannerPulse {
+    0% {
+        background-color: #dfefff;
+    }
+    50% {
+        background-color: red;
+    }
+    100% {
+        background-color: #dfefff;
+    }
+}
+
+@keyframes entertainedBannerPulse {
+    0% {
+        background-color: #ffe8d6;
+    }
+    50% {
+        background-color:red;
+    }
+    100% {
+        background-color: #ffe8d6;
+    }
+}
+
+body.ff-informed.ff-pulsing .ff-banner {
+    animation: informedBannerPulse 5s ease-in-out;
+}
+
+body.ff-entertained.ff-pulsing .ff-banner {
+    animation: entertainedBannerPulse 5s ease-in-out;
+}
