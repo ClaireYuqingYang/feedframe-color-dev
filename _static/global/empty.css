@@ -31,7 +31,7 @@
    IMPORTANT: no !important here
    ========================================================= */
 body.ff-informed #tweet_table td > div.row.justify-content-start {
-    background-color: #eaf4ff;
+    background-color: #eafff2;
 }
 
 body.ff-entertained #tweet_table td > div.row.justify-content-start {
@@ -42,7 +42,10 @@ body.ff-entertained #tweet_table td > div.row.justify-content-start {
    Banner normal colors
    ========================================================= */
 body.ff-informed .ff-banner {
-    background-color: #dfefff;
+    background-color: #d9f7e8;
+    border: 2px solid #1a7a42;
+    font-weight: 600;
+    color: #14532d;
 }
 
 body.ff-entertained .ff-banner {
@@ -54,13 +57,13 @@ body.ff-entertained .ff-banner {
    ========================================================= */
 @keyframes informedPulse {
     0% {
-        background-color: #eaf4ff;
+        background-color: #eafff2;
     }
     50% {
-        background-color: #2368c3a1;
+        background-color: #23a35ea1;
     }
     100% {
-        background-color: #eaf4ff;
+        background-color: #eafff2;
     }
 }
 
@@ -78,13 +81,13 @@ body.ff-entertained .ff-banner {
 
 @keyframes informedBannerPulse {
     0% {
-        background-color: #dfefff;
+        background-color: #d9f7e8;
     }
     50% {
-        background-color: #2368c3a1;
+        background-color: #23a35ea1;
     }
     100% {
-        background-color: #dfefff;
+        background-color: #d9f7e8;
     }
 }
 
