@@ -3,36 +3,9 @@
    ========================================================= */
 
 /* ===== Toggle buttons ===== */
-.ff-toggle-btn {
-    border: 2px solid #ccc;
-    border-radius: 20px;
-    padding: 6px 16px;
-    background: white;
-    color: #555;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Default active (fallback — black) */
 .ff-toggle-btn.active {
-    background: #333;
+    background: black;
     color: white;
-    border-color: #333;
-}
-
-/* Informed mode: active informed button = green */
-body.ff-informed #informedBtn.active {
-    background: #1a7a42;
-    color: white;
-    border-color: #1a7a42;
-}
-
-/* Entertained mode: active entertained button = orange */
-body.ff-entertained #entertainedBtn.active {
-    background: #c05c10;
-    color: white;
-    border-color: #c05c10;
 }
 
 /* ===== Banner ===== */
@@ -77,9 +50,6 @@ body.ff-informed .ff-banner {
 
 body.ff-entertained .ff-banner {
     background-color: #ffe8d6;
-    border: 2px solid #c05c10;
-    font-weight: 600;
-    color: #7a2800;
 }
 
 /* =========================================================

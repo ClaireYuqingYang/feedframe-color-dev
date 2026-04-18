@@ -19,13 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             informedBtn.classList.remove("active");
             banner.innerText = "Mode: Entertained";
         }
-
-        window.currentFeedMode = mode;
-        console.log("[feedframe_mode.js] mode set to:", mode);
     }
-
-    // Initialize to informed mode on load
-    setMode("informed");
 
     informedBtn.addEventListener("click", function () {
         setMode("informed");

@@ -1,6 +1,5 @@
 // Define an array to store row visibility duration data
 var rowVisibilityData = [];
-console.log("[dwell.js] loaded — mode-aware version");
 
 // Object to store information about currently visible rows
 var visibleRows = {};
@@ -20,7 +19,7 @@ function handleRowVisibility(entries, observer) {
             // Row is not visible
             if (visibleRows[index]) {
                 const duration = Date.now() - visibleRows[index]; // Calculate the duration
-                rowVisibilityData.push({ doc_id: index, duration: duration / 1000, mode: window.currentFeedMode || "informed" });
+                rowVisibilityData.push({ doc_id: index, duration: duration / 1000 });
                 delete visibleRows[index]; // Remove from visibleRows
             }
         }
@@ -34,7 +33,7 @@ function handleRowVisibility(entries, observer) {
 function updateVisibleRowsDwellTime() {
     Object.keys(visibleRows).forEach((index) => {
         const duration = Date.now() - visibleRows[index];
-        rowVisibilityData.push({ doc_id: parseInt(index), duration: duration / 1000, mode: window.currentFeedMode || "informed" });
+        rowVisibilityData.push({ doc_id: parseInt(index), duration: duration / 1000 });
         delete visibleRows[index];
     });
 }

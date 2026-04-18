@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.like-button').forEach(button => {
         button.addEventListener('click', function() {
             toggleLike(button);
-            button.dataset.likeMode = window.currentFeedMode || "informed";
         });
     });
 
@@ -47,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             replyCountSpan.textContent = replyCount.toString();
 
             replyField.value = '';
-            repliesData.push({ doc_id: docId, reply: replyText, mode: window.currentFeedMode || "informed" });
+            repliesData.push({ doc_id: docId, reply: replyText });
         }
     }
 
@@ -65,8 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let docId = button.getAttribute('id').replace('like_button_', '');
             let icon = button.querySelector('.like-icon');
             let isLiked = icon.classList.contains('bi-heart-fill');
-            let mode = button.dataset.likeMode || window.currentFeedMode || "informed";
-            likesData.push({ doc_id: docId, liked: isLiked, mode: mode });
+            likesData.push({ doc_id: docId, liked: isLiked });
         });
     }
 
