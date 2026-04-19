@@ -7,25 +7,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setMode(mode) {
         document.body.classList.remove("ff-informed", "ff-entertained");
+        informedBtn.classList.remove("active");
+        entertainedBtn.classList.remove("active");
 
         if (mode === "informed") {
             document.body.classList.add("ff-informed");
             informedBtn.classList.add("active");
-            entertainedBtn.classList.remove("active");
             banner.innerText = "Mode: Informed";
         } else if (mode === "entertained") {
             document.body.classList.add("ff-entertained");
             entertainedBtn.classList.add("active");
-            informedBtn.classList.remove("active");
             banner.innerText = "Mode: Entertained";
+        } else {
+            banner.innerText = "Mode: Default";
+            mode = "default";
         }
 
         window.currentFeedMode = mode;
         console.log("[feedframe_mode.js] mode set to:", mode);
     }
 
-    // Initialize to informed mode on load
-    setMode("informed");
+    // Initialize without selecting either explicit mode.
+    setMode("default");
 
     informedBtn.addEventListener("click", function () {
         setMode("informed");
