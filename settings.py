@@ -10,8 +10,8 @@ SESSION_CONFIGS = [
 
 ROOMS = [
     dict(
-        name='dice_color',
-        display_name='Dice Color',
+        name='room_a',
+        display_name='Room A',
     )
 ]
 
