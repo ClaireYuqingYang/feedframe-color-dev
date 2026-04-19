@@ -2,7 +2,7 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-        name='DICE',
+        name='dice_color',
         app_sequence=['DICE'],
         num_demo_participants=3,
     )
@@ -10,8 +10,8 @@ SESSION_CONFIGS = [
 
 ROOMS = [
     dict(
-        name='study_a',
-        display_name='Study A',
+        name='dice_color',
+        display_name='Dice Color',
     )
 ]
 
